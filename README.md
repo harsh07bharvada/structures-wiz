@@ -4,7 +4,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 
 ## Installation
 
-Use the [npm](https://www.npmjs.com/)package manager to install foobar.
+Use the [npm](https://www.npmjs.com/) package manager to install Structures-Wiz.
 
 ```bash
 npm install structures-wiz
@@ -23,7 +23,7 @@ import { PriorityQueue } from 'structures-wiz';
   priorityQ.enqueue(70, 200);
   const heap = priorityQ.getHeap();
   console.log("Heap:",heap);
-  
+
   priorityQ.dequeue();
   priorityQ.enqueue(50, 40);
   const heap = priorityQ.getHeap();

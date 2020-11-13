@@ -1,0 +1,26 @@
+{
+  "name": "structures-wiz",
+  "version": "1.0.0",
+  "description": "Structures-Wiz is a JavaScript based npm package for using awesome data structures like Stacks, Queue, LinkedList, PriorityQueues.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harsh07bharvada/structures-wiz.git"
+  },
+  "keywords": [
+    "data-structures",
+    "stacks",
+    "queue",
+    "linkedlist",
+    "priority-queue"
+  ],
+  "author": "Harsh Bharvada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harsh07bharvada/structures-wiz/issues"
+  },
+  "homepage": "https://github.com/harsh07bharvada/structures-wiz#readme"
+}
