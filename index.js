@@ -2,7 +2,8 @@ class PriorityQueue{
 
   /**
    *  @Params - Comparator (If not passed then create Max Heap)
-   *  @What - Instantiate max or min heap */
+   *  @What - Instantiate max or min heap 
+  */
   constructor(comparator = (a,b) => a >= b){
     this.heap = [];
     this.height = -1;
@@ -10,7 +11,7 @@ class PriorityQueue{
   }
 
   /**
-   * @What - Gets PriorityQueue size
+   * @What - Gets Priority Queue size
    */
   getSize(){
     return this.heap.length;
@@ -58,7 +59,7 @@ class PriorityQueue{
 
   /**
    * @Param - ( Value to be inserted , Priority of the Value )
-   * @What - Inserts the new Vale based on Priority (If Priority not 
+   * @What - Inserts the new Value based on Priority (If Priority not 
    * received then Priority = Value ) 
    */
   enqueue(value , priority){
@@ -126,7 +127,6 @@ class PriorityQueue{
       this.swap(pos, maxIndex);
       this.bubbleDown(maxIndex);
     }
-    
   }
 
   /**
@@ -222,4 +222,80 @@ class PriorityQueue{
   }
 }
 
+class Stack{
+
+  /**
+   *  @Params - Starting Stack Values, isUnique (true if one needs unique elements in the stack) 
+   *  @What - Instantiate the stack
+  */
+  constructor(receivedList = [], isUnique = false){
+
+    this.isUnique = isUnique;
+    this.list = isUnique ? [...new Set(receivedList)] : receivedList;
+  }
+
+  /**
+   *  @Params - New Value to be inserted
+   *  @What - Inserts the new value in the stack
+  */
+  push(value){
+    if(value){
+      this.list[this.list.length] = value;
+      if(this.isUnique){
+        this.removeDuplicates();
+      }
+    }
+  }
+
+  /**
+   *  @Params - List of values of to pushed at once
+   *  @What - Pushes the list of values at once
+  */
+  pushAll(...values){
+    if(values){
+      this.list = this.list.concat(values);
+      if(this.isUnique){
+        this.removeDuplicates();
+      }
+    }
+  }
+
+  /**
+   *  @What - Pops the last value out of the stack
+  */
+  pop(){
+    return this.list[this.list.length - 1];
+  }
+
+  /**
+   *  @What - Returns the Top element of the stack
+  */
+  peek(){
+    return this.list[0];
+  }
+
+  /**
+   *  @What - Removes Duplicates from the current stack
+  */
+  removeDuplicates(){
+    this.list = [...new Set(this.list)];
+
+  }
+
+  /**
+   *  @What - Clears the stack
+  */
+  clear(){
+    this.list = [];
+  }
+
+  /**
+   *  @What - Prints the current state of stack
+  */
+  print(){
+    console.log(this.list);
+  }
+}
+
 module.exports.PriorityQueue = PriorityQueue;
+module.exports.Stack = Stack;
