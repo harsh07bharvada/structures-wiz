@@ -1,6 +1,6 @@
 {
   "name": "structures-wiz",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Structures-Wiz is a JavaScript based npm package for using awesome data structures like Stacks, Queue, LinkedList, PriorityQueues.",
   "main": "index.js",
   "scripts": {
