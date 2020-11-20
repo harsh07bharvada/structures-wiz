@@ -307,5 +307,93 @@ class Stack {
   }
 }
 
+class SinglyLinkedList {
+
+	/**
+	 * @what instantiates the list.
+	 */
+	constructor() {
+		this.size = 0;
+		this.head = null;
+    this.tail = null;
+  }
+  
+  /**
+   * This method is specific to the class.
+   * @what creates a newNode for the list. Sets the next as null.
+   * @param {js object or a primitive datatype} data 
+   */
+  newListNode(data) {
+    let node = {
+      'data': data,
+      'next': null
+    }
+    return node;
+  }
+
+	/**
+	 * @what Gets singly LL size
+	 */
+	getSize() {
+		return this.size;
+	}
+
+	/**
+	 * @What Adds a node to the beginning of the list.
+	 * @Params {value of the node} val 
+	 */
+	addFirst(val) {
+		var node = this.newListNode(val);
+		if (this.head === null) {
+			this.head = node;
+			this.tail = this.head;
+		} else {
+			node.next = this.head;
+			this.head = node;
+		}
+
+		this.size += 1;
+	}
+
+	/**
+	 * @What Adds a node to the end of the list.
+	 * @Param {value of the node} val 
+	 */
+	addLast(val) {
+		var node = this.newListNode(val);
+		if (this.tail === null) {
+			this.tail = node;
+			this.head = this.tail;
+		} else {
+			this.tail.next = node;
+			this.tail = this.tail.next;
+		}
+
+		this.size += 1;
+	}
+
+	/**
+	 * @what Prints list on console
+	 */
+	print() {
+		var listStr = "[ ";
+		var runner = this.head;
+		while (true) {
+			listStr += runner.data;
+			if(runner == this.tail)
+				break;
+			else {
+				listStr += "->";
+			}
+			runner = runner.next;
+    }
+    listStr += " ]";
+
+		console.log(listStr);
+	}
+}
+
+
 module.exports.PriorityQueue = PriorityQueue;
 module.exports.Stack = Stack;
+module.exports.SinglyLinkedList = SinglyLinkedList;
