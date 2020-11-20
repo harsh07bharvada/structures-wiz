@@ -32,7 +32,17 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 		    - [getLeafNodes](#pq-getLeafNodes)
 		    - [print](#pq-print)
 		    - [printSortedHeap](#pq-printSortedHeap)
-    - [Stacks](#stacks) :soon:
+    - [Stacks](#stacks)
+	    - [Instantiation](#st-instantiation)
+	    - [Methods](#st-methods)
+		    - [getSize](#st-getSize)
+		    - [push](#st-push)
+		    - [pushAll](#st-pushAll)
+		    - [peek](#st-peek)
+		    - [pop](#st-pop)
+		    - [removeDuplicates](#st-removeDuplicates)
+		    - [clear](#st-clear)
+		    - [print](#st-print)
     - [Queue](#queues) :soon:
 - [Contribute](#contribute)
 - [License](#license)
@@ -57,7 +67,7 @@ npm install structures-wiz
 
 ## Usage
 
-  ### Priority Queue
+### Priority Queue
 Priority Queues are an extension to queues. Each entry into a Priority Queue is based on its Priority.
 The advantage of using Priority Queues is that insertion of elements takes O(log n) time because they are implementation is based on Max Heap or Min Heap.
 
@@ -81,6 +91,7 @@ Following are the methods exposed for usage:
 
 ####  enqueue(value, priority) <a name="pq-enqueue"></a>
 
+Adds new value to the Queue based on its priority and if Priority is not passed then Priority is equal to Value.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -99,6 +110,7 @@ priorityQ.enqueue(10, 100);
 
 ####  dequeue() <a name="pq-dequeue"></a>
 
+Removes the Maximum element (In case of Max-Heap config) or Minimum Element (In case of Min-Heap config).
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -114,6 +126,7 @@ priorityQ.dequeue(); //Removes the Highest Priority Element
 
 ####  getSize() <a name="pq-getSize"></a>
 
+Returns the size of the queue.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -129,6 +142,7 @@ priorityQ.getSize(); //2
 
 ####  getLeftIndex( index ) <a name="pq-getLeftIndex"></a>
 
+Returns the left child index of the passed index.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -148,6 +162,7 @@ console.log("LeftIndex of 0th index is :",leftIndex); //1
 ```
 ####  getRightIndex( index ) <a name="pq-getRightIndex"></a>
 
+Returns the right child index of the passed index.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -168,6 +183,7 @@ console.log("RightIndex of 0th index is :",rightIndex); //2
 
 ####  getParentIndex( index ) <a name="pq-getParentIndex"></a>
 
+Returns the parent node index of the passed index.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -188,6 +204,7 @@ console.log("ParentIndex of 1st index is :",parentIndex);//0
 
 ####  peek() <a name="pq-peek"></a>
 
+Returns the Maximum element (In case of Max-Heap config) or Minimum Element (In case of Min-Heap config).
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -208,6 +225,7 @@ console.log("Peak Value is :",peekValue); //[ 70 , 200 ]
 
 ####  getSortedHeap() <a name="pq-getSortedHeap"></a>
 
+Returns the current heap in the sorted order ( Descending if config is set as Max-Heap else Ascending in case of Min-Heap)
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -259,6 +277,7 @@ console.log("kth - ",k," is :",kthElement); //[ 10 , 100 ]
 
 ####  getHeight() <a name="pq-getHeight"></a>
 
+Returns the height of the heap.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -279,6 +298,7 @@ console.log("Height of Heap is :",height); // 2
 
 ####  isLeafNode(index) <a name="pq-isLeafNode"></a>
 
+Returns true if the node at the index is a leaf node else returns false.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -300,6 +320,7 @@ console.log("Is ",index,"Th a leaf node ?",isIndexLeafNode); // true
 
 ####  getLeafNodes() <a name="pq-getLeafNodes"></a>
 
+Returns the list of leaf nodes.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -320,6 +341,7 @@ console.log("Leaf Nodes are",leafNodes); // [ [ 60, 90 ], [ 40, 20 ], [ 20, 80 ]
 
 ####  print() <a name="pq-print"></a>
 
+Prints the current state of the queue.
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -348,6 +370,7 @@ priorityQ.print();
 
 ####  printSortedHeap() <a name="pq-printSortedHeap"></a>
 
+Prints the current heap in the sorted order ( Descending if config is set as Max-Heap else Ascending in case of Min-Heap)
 ```javascript
 
 import { PriorityQueue } from  'structures-wiz';
@@ -373,7 +396,156 @@ priorityQ.printSortedHeap();
 ]
 */
 ```
+<hr>
 
+### Stack
+Implementation of stack is pretty straightforward with a few additional features like creating a stack with unique elements and removing duplicates in a stack.
+
+#### Instantiation <a name="st-instantiation"></a>
+
+```javascript
+
+import { Stack } from  'structures-wiz';
+
+//Default contructor will create a Stack with empty elements and "isUnique" flag false  
+const stack = new Stack();
+
+//Passing custom values and setting the second parameter makes the Stack only accept unique Elements
+const uniqueStack = new Stack([20, 90],true);
+
+```
+
+#### Methods  <a name="st-methods"></a>
+
+Following are the methods exposed for usage:
+
+####  getSize() <a name="st-getSize"></a>
+
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack([20, 80, 10, 90]);
+
+const size = stack.getSize();
+console.log("Size of the stack is:",size); // 4
+```
+
+####  push(value) <a name="st-push"></a>
+
+Pushes the received value at the end of the stack.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack();
+stack.push(100);
+stack.push(100);
+stack.push(400);
+stack.push(600);
+stack.push(100);
+stack.push(800);
+stack.print() // [ 100, 100, 400, 600, 100, 800 ]
+```
+
+####  pushAll(values) <a name="st-pushAll"></a>
+
+Pushes all the received values at the end of the stack.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+ //Config 1 - Pass set of values
+const stack = new Stack();
+stack.pushAll( 100, 100, 400, 600, 100, 800 );
+stack.print() // [ 100, 100, 400, 600, 100, 800 ]
+
+ //Config 2 - Pass Array of values
+const stack = new Stack();
+stack.pushAll([100, 100, 400, 600, 100, 800]);
+stack.print() // [ 100, 100, 400, 600, 100, 800 ]
+```
+
+####  peek() <a name="st-peek"></a>
+
+Returns the top most value.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack();
+stack.pushAll( 100, 100, 400, 600, 100, 800 );
+
+const peekValue = stack.peek();
+console.log("Peek Value is :",peekValue);//800
+```
+
+####  pop() <a name="st-pop"></a>
+
+Removes and returns the top most element of the stack.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack();
+
+stack.pushAll( 100, 100, 400, 600, 100, 800 );
+
+stack.print(); //[ 100, 100, 400, 600, 100, 800 ]
+
+const poppedValue = stack.pop(); 
+
+console.log("Popped Value is :",poppedValue);//800
+
+stack.print();//[ 100, 100, 400, 600, 100 ]
+```
+
+####  removeDuplicates() <a name="st-removeDuplicates"></a>
+
+Removes the duplicates elements of the stack.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack();
+stack.pushAll( 100, 100, 400, 600, 100, 800 );
+
+stack.print(); //[ 100, 100, 400, 600, 100, 800 ]
+
+stack.removeDuplicates();
+
+stack.print();//[ 100, 400, 600, 800 ]
+```
+
+####  clear() <a name="st-clear"></a>
+
+Removes all the elements of the stack.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack();
+stack.pushAll( 100, 100, 400, 600, 100, 800 );
+
+stack.print(); //[ 100, 100, 400, 600, 100, 800 ]
+
+stack.clear();
+
+stack.print();//[ ]
+```
+
+####  print() <a name="st-print"></a>
+
+Prints the current stack state.
+```javascript
+
+import { Stack } from  'structures-wiz';
+ 
+const stack = new Stack();
+stack.pushAll( 100, 100, 400, 600, 100, 800 );
+
+stack.print(); //[ 100, 100, 400, 600, 100, 800 ]
+```
   
 
 ## Contribute
