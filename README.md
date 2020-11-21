@@ -568,7 +568,7 @@ import { SinglyLinkedList } from 'structures-wiz';
 const list = new SinglyLinkedList();
 ```
 
-#### Methods
+#### Methods <a name="sll-methods"></a>
 
 Following are the methods exposed for usage.
 
