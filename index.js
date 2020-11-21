@@ -310,7 +310,7 @@ class Stack {
 class SinglyLinkedList {
 
 	/**
-	 * @what instantiates the list.
+	 * @What instantiates the list.
 	 */
 	constructor() {
 		this.size = 0;
@@ -320,8 +320,8 @@ class SinglyLinkedList {
   
   /**
    * This method is specific to the class.
-   * @what creates a newNode for the list. Sets the next as null.
-   * @param {js object or a primitive datatype} data 
+   * @What creates a newNode for the list. Sets the next as null.
+   * @Params {js object or a primitive datatype} data 
    */
   newListNode(data) {
     let node = {
@@ -357,7 +357,7 @@ class SinglyLinkedList {
 
 	/**
 	 * @What Adds a node to the end of the list.
-	 * @Param {value of the node} val 
+	 * @Params {value of the node} val 
 	 */
 	addLast(val) {
 		var node = this.newListNode(val);
@@ -373,7 +373,7 @@ class SinglyLinkedList {
 	}
 
 	/**
-	 * @what Prints list on console
+	 * @What Prints list on console
 	 */
 	print() {
 		var listStr = "[ ";
