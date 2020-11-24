@@ -310,67 +310,28 @@ class Stack {
 class LinkedList {
 
   /**
-   * @What defining constants for listType
+   * @What Instantiates the list.
    */
-  static listType = {
-    SINGLE: 'single',
-    DOUBLE: 'double'
-  }
-
-  static defaultConfigs = {
-    'type': LinkedList.listType.SINGLE
-  }
-
-  /**
-   * @What Initializes default configs of LinkedList.
-   * Default configs are specified in static field -> defaultConfigs
-   */
-  setDefaultConfigs() {
-    if(!this.config)
-      this.config = {};
-    for(let defConfig in LinkedList.defaultConfigs) {
-      if(!this.config[defConfig]) {
-        this.config[defConfig] = LinkedList.defaultConfigs[defConfig];
-      }
-    }
-  }
-
-  /**
-  * @What instantiates the list.
-   */
-  constructor(config) {
+  constructor() {
     this.size = 0;
     this.head = null;
     this.tail = null;
-    this.config = config;
-    this.setDefaultConfigs();
   }
 
   /**
-   * This method is specific to the class.
-   * @What creates a newNode for a singly linkedlist. Sets the next as null.
-   * @Params {js object or a primitive datatype} data 
-   */
-  newSinglyLinkedListNode(data) {
-    let node = {
-      data: data,
-      next: null
-    }
-
-    return node;
-  }
-
-  newDoublyLinkedListNode(data) {
-    let node = {
-      data: data,
+   * @What Creates a new node
+   * @Params {value of the node} val 
+   */ 
+  createNewNode(val = '') {
+    return {
+      val,
       next: null,
       prev: null
-    }
-    return node;
+    };
   }
 
   /**
-   * @what Gets singly LL size
+   * @What Returns the size of the LinkedList
    */
   getSize() {
     return this.size;
@@ -380,114 +341,82 @@ class LinkedList {
    * @What Adds a node to the beginning of the list.
    * @Params {value of the node} val 
    */
-  addFirst(val) {
-    switch (this.config.type) {
-      case LinkedList.listType.SINGLE:
-        this.addSinglyListNodeToFront(val);
-        break;
+  addAtHead(val = '') {
 
-      case LinkedList.listType.DOUBLE:
-        this.addDoublyListNodeToFront(val);
-        break;
+    const newNode = this.createNewNode(val);
+    if (this.head) {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+      this.head = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
     }
-
     this.size++;
-  }
-
-  /**
-   * adds a node in singly linkedlist
-   * @param {value to be added in Singly linkedlist} val 
-   */
-  addSinglyListNodeToFront(val) {
-    const node = this.newSinglyLinkedListNode(val);
-    if (!this.head) {
-      this.head = node;
-      this.tail = this.head;
-    } else {
-      node.next = this.head;
-      this.head = node
-    }
-  }
-
-  /**
-   * adds a node in doubly linkedlist
-   * @param {value to be added in Singly linkedlist} val 
-   */
-  addDoublyListNodeToFront(val) {
-    const node = this.newDoublyLinkedListNode(val);
-    if(!this.head) {
-      this.head = node;
-      this.tail = this.head;
-    } else {
-      node.next = this.head;
-      this.head.prev = node;
-      this.head = node;
-    }
   }
 
   /**
    * @What Adds a node to the end of the list.
    * @Params {value of the node} val 
    */
-  addLast(val) {
-    switch(this.config.type) {
-      case LinkedList.listType.SINGLE:
-        this.addSinglyListNodeToBack(val);
-        break;
-
-      case LinkedList.listType.DOUBLE:
-        this.addDoublyListNodeToBack(val);
-        break;
+  addAtTail(val = '') {
+    const newNode = this.createNewNode(val);
+    if (this.tail) {
+      newNode.prev = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
     }
-
     this.size++;
   }
 
   /**
-   * @What adds a node to the end of list.
-   * @Params {value of the node} val 
+   * @What Removes a node from the beginning of the list. 
    */
-  addSinglyListNodeToBack(val) {
-    const node = this.newSinglyLinkedListNode(val);
-    if(!this.tail) {
-      this.tail = node;
-      this.head = this.tail;
-    } else {
-      this.tail.next = node;
-      this.tail = this.tail.next;
+  removeAtHead(){
+    if(this.head === this.tail){
+      this.head = null;
+      this.tail = null;
+    }else{
+      this.head = this.head.next;
+      this.head.prev = null;
     }
+    this.size = this.size ? this.size - 1 : 0;
   }
 
   /**
-   * @What adds a node to the end of the list.
-   * @Params {value of the node} val 
+   * @What Removes a node from the end of the list. 
    */
-  addDoublyListNodeToBack(val) {
-    const node = this.newDoublyLinkedListNode(val);
-    if(!this.tail) {
-      this.tail = node;
-      this.head = this.tail;
-    } else {
-      this.tail.next = node;
-      node.prev = this.tail;
-      this.tail = node;
+  removeAtTail(){
+    if(this.head === this.tail){
+      this.head = null;
+      this.tail = null;
+    }else{
+      this.tail = this.tail.prev;
+      this.tail.next = null;
     }
+    this.size = this.size ? this.size - 1 : 0;
   }
 
   /**
-   * @What Prints list on console
+   * @What Prints the LinkedList
    */
   print() {
-    var list = [];
-    var runner = this.head;
+    let list = [];
+    let runner = this.head;
     while (runner) {
-      list.push(runner.data);
+      list.push(runner.val);
       runner = runner.next;
     }
-
-    console.log("[ " + list.join("->") + " ]");
+    if (this.size)
+      console.log(`${list.join(" -> ")} -> NULL`);
+    else
+      console.log("Linked List is empty")
   }
 }
+
 
 
 module.exports.PriorityQueue = PriorityQueue;

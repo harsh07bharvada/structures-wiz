@@ -44,13 +44,15 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 		    - [clear](#st-clear)
 		    - [print](#st-print)
     - [Queue](#queues) :soon:
-    - [Singly LinkedList](#singly-linkedlist)
-        - [Instantiation](#sll-instantiation)
-        - [Methods](#sll-methods)
-            - [getSize](#sll-getSize)
-            - [addFirst](#sll-addFirst)
-            - [addLast](#sll-addLast)
-            - [print](#sll-print)
+    - [LinkedList](#ll)
+        - [Instantiation](#ll-instantiation)
+        - [Methods](#ll-methods)
+            - [getSize](#ll-getSize)
+            - [addAtHead](#ll-addAtHead)
+            - [addAtTail](#ll-addAtTail)
+            - [removeAtHead](#ll-removeAtHead)
+            - [removeAtTail](#ll-removeAtTail)
+            - [print](#ll-print)
 	
 - [Contribute](#contribute)
 - [License](#license)
@@ -555,77 +557,141 @@ stack.pushAll( 100, 100, 400, 600, 100, 800 );
 stack.print(); //[ 100, 100, 400, 600, 100, 800 ]
 ```
 
-### Singly Linkedlist
-Singly linked lists contain nodes which have a data field as well as 'next' field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal. [(Wikipedia)](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)
+### LinkedList <a name="ll"></a>
 
-#### Instantiation <a name="sll-instantiation"></a>
+
+#### Instantiation <a name="ll-instantiation"></a>
 
 ```javascript
 
-import { SinglyLinkedList } from 'structures-wiz';
+import { LinkedList } from 'structures-wiz';
 
-//  Default Constructor which creates a singly linkedlist.
-const list = new SinglyLinkedList();
+//Instantiates the LinkedList with no nodes
+const linkedList = new LinkedList();
+
+linkedList.print(); //Linked List is empty
+
 ```
 
-#### Methods <a name="sll-methods"></a>
+#### Methods <a name="ll-methods"></a>
 
 Following are the methods exposed for usage.
 
 #### getSize() <a name="sll-getSize"></a>
 
 ```javascript
-import { SinglyLinkedList } from 'structures-wiz';
+import { LinkedList } from 'structures-wiz';
 
-var list = new SinglyLinkedList();
-list.addFirst(20);
-list.addFirst(10);
-lis.addLast(30);
 
-const size = list.getSize();
-console.log("size: " + size); // 3
+const linkedList = new LinkedList();
+
+linkedList.addAtHead(2);
+
+linkedList.addAtHead(5);
+
+linkedList.addAtTail(15);
+
+linkedList.addAtHead(9);
+
+const size = linkedList.getSize();
+console.log("Size of the LinkedList is:",size);//4
 ```
 
-#### addFirst(value) <a name="sll-addFirst"></a>
+#### addAtHead(value) <a name="ll-addAtHead"></a>
 
+Method to add a value at the start of the LinkedList.
 ```javascript
-import { SinglyLinkedList } from 'structures-wiz';
+import { LinkedList } from 'structures-wiz';
 
-var list = new SinglyLinkedList();
-list.addFirst(30);
-list.addFirst(20);
-list.addFirst(10);
-list.print(); // [ 10->20->30 ]
+const linkedList = new LinkedList();
+
+linkedList.addAtHead(2);
+
+linkedList.addAtHead(5);
+
+linkedList.print(); // 5 -> 2 -> NULL
 ```
 
-#### addLast(value) <a name="sll-addLast"></a>
+#### addAtTail(value) <a name="ll-addAtTail"></a>
+Method to add a value at the end of the LinkedList.
 
 ```javascript
-import { SinglyLinkedList } from 'structures-wiz';
+import { LinkedList } from 'structures-wiz';
 
-var list = new SinglyLinkedList();
-list.addLast(30);
-list.addLast(20);
-list.addLast(10);
-list.print(); // [ 30->20->10 ]
+const linkedList = new LinkedList();
+
+linkedList.addAtHead(2);
+
+linkedList.addAtHead(5);
+
+linkedList.addAtTail(15);
+
+linkedList.print(); // 5 -> 2 -> 15 -> NULL
 ```
 
-#### print() <a name="sll-print"></a>
+#### removeAtHead(value) <a name="ll-removeAtHead"></a>
+
+Method to remove the value at the start of the LinkedList.
+```javascript
+import { LinkedList } from 'structures-wiz';
+
+const linkedList = new LinkedList();
+
+linkedList.addAtHead(2);
+
+linkedList.addAtHead(5);
+
+linkedList.print(); // 5 -> 2 -> NULL
+
+linkedList.removeAtHead(5);
+
+linkedList.print(); // 2 -> NULL
+
+```
+
+#### removeAtTail(value) <a name="ll-removeAtTail"></a>
+Method to remove the value at the end of the LinkedList.
 
 ```javascript
-import { SinglyLinkedList } from 'structures-wiz';
+import { LinkedList } from 'structures-wiz';
 
-var list = new SinglyLinkedList();
-list.addFirst(10);
-list.addFirst(20);
-list.print(); // [ 20->10 ]
+const linkedList = new LinkedList();
 
-list.addLast(30);
-list.print(); // [ 20->10->30 ]
+linkedList.addAtHead(2);
 
-list.addLast(70);
-list.addFirst(40);
-list.print(); // [ 40->20->10->30->70 ]
+linkedList.addAtHead(5);
+
+linkedList.addAtTail(15);
+
+linkedList.print(); // 5 -> 2 -> 15 -> NULL
+
+linkedList.removeAtTail(5);
+
+linkedList.print(); // 5 -> 2 -> NULL
+
+```
+
+#### print() <a name="ll-print"></a>
+Prints the LinkedList.
+
+```javascript
+import { LinkedList } from 'structures-wiz';
+
+const linkedList = new LinkedList();
+
+linkedList.print(); // Linked List is empty
+
+linkedList.addAtHead(2);
+linkedList.print(); // 2 -> NULL
+
+linkedList.addAtHead(5);
+linkedList.print(); //5 -> 2 -> NULL
+
+linkedList.addAtTail(15);
+linkedList.print(); // 5 -> 2 -> 15 -> NULL
+
+linkedList.addAtHead(9);
+linkedList.print(); //9 -> 5 -> 2 -> 15 -> NULL
 ```
 
 ## Contribute
