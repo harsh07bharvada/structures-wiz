@@ -44,6 +44,14 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 		    - [clear](#st-clear)
 		    - [print](#st-print)
     - [Queue](#queues) :soon:
+    - [Singly LinkedList](#singly-linkedlist)
+        - [Instantiation](#sll-instantiation)
+        - [Methods](#sll-methods)
+            - [getSize](#sll-getSize)
+            - [addFirst](#sll-addFirst)
+            - [addLast](#sll-addLast)
+            - [print](#sll-print)
+	
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -546,7 +554,79 @@ stack.pushAll( 100, 100, 400, 600, 100, 800 );
 
 stack.print(); //[ 100, 100, 400, 600, 100, 800 ]
 ```
-  
+
+### Singly Linkedlist
+Singly linked lists contain nodes which have a data field as well as 'next' field, which points to the next node in line of nodes. Operations that can be performed on singly linked lists include insertion, deletion and traversal. [(Wikipedia)](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_list)
+
+#### Instantiation <a name="sll-instantiation"></a>
+
+```javascript
+
+import { SinglyLinkedList } from 'structures-wiz';
+
+//  Default Constructor which creates a singly linkedlist.
+const list = new SinglyLinkedList();
+```
+
+#### Methods <a name="sll-methods"></a>
+
+Following are the methods exposed for usage.
+
+#### getSize() <a name="sll-getSize"></a>
+
+```javascript
+import { SinglyLinkedList } from 'structures-wiz';
+
+var list = new SinglyLinkedList();
+list.addFirst(20);
+list.addFirst(10);
+lis.addLast(30);
+
+const size = list.getSize();
+console.log("size: " + size); // 3
+```
+
+#### addFirst(value) <a name="sll-addFirst"></a>
+
+```javascript
+import { SinglyLinkedList } from 'structures-wiz';
+
+var list = new SinglyLinkedList();
+list.addFirst(30);
+list.addFirst(20);
+list.addFirst(10);
+list.print(); // [ 10->20->30 ]
+```
+
+#### addLast(value) <a name="sll-addLast"></a>
+
+```javascript
+import { SinglyLinkedList } from 'structures-wiz';
+
+var list = new SinglyLinkedList();
+list.addLast(30);
+list.addLast(20);
+list.addLast(10);
+list.print(); // [ 30->20->10 ]
+```
+
+#### print() <a name="sll-print"></a>
+
+```javascript
+import { SinglyLinkedList } from 'structures-wiz';
+
+var list = new SinglyLinkedList();
+list.addFirst(10);
+list.addFirst(20);
+list.print(); // [ 20->10 ]
+
+list.addLast(30);
+list.print(); // [ 20->10->30 ]
+
+list.addLast(70);
+list.addFirst(40);
+list.print(); // [ 40->20->10->30->70 ]
+```
 
 ## Contribute
 

@@ -307,5 +307,189 @@ class Stack {
   }
 }
 
+class LinkedList {
+
+  /**
+   * @What defining constants for listType
+   */
+  static listType = {
+    SINGLE: 'single',
+    DOUBLE: 'double'
+  }
+
+  static defaultConfigs = {
+    'type': LinkedList.listType.SINGLE
+  }
+
+  /**
+   * @What Initializes default configs of LinkedList.
+   * Default configs are specified in static field -> defaultConfigs
+   */
+  setDefaultConfigs() {
+    if(!this.config)
+      this.config = {};
+    for(let defConfig in LinkedList.defaultConfigs) {
+      if(!this.config[defConfig]) {
+        this.config[defConfig] = LinkedList.defaultConfigs[defConfig];
+      }
+    }
+  }
+
+  /**
+  * @What instantiates the list.
+   */
+  constructor(config) {
+    this.size = 0;
+    this.head = null;
+    this.tail = null;
+    this.config = config;
+    this.setDefaultConfigs();
+  }
+
+  /**
+   * This method is specific to the class.
+   * @What creates a newNode for a singly linkedlist. Sets the next as null.
+   * @Params {js object or a primitive datatype} data 
+   */
+  newSinglyLinkedListNode(data) {
+    let node = {
+      data: data,
+      next: null
+    }
+
+    return node;
+  }
+
+  newDoublyLinkedListNode(data) {
+    let node = {
+      data: data,
+      next: null,
+      prev: null
+    }
+    return node;
+  }
+
+  /**
+   * @what Gets singly LL size
+   */
+  getSize() {
+    return this.size;
+  }
+
+  /**
+   * @What Adds a node to the beginning of the list.
+   * @Params {value of the node} val 
+   */
+  addFirst(val) {
+    switch (this.config.type) {
+      case LinkedList.listType.SINGLE:
+        this.addSinglyListNodeToFront(val);
+        break;
+
+      case LinkedList.listType.DOUBLE:
+        this.addDoublyListNodeToFront(val);
+        break;
+    }
+
+    this.size++;
+  }
+
+  /**
+   * adds a node in singly linkedlist
+   * @param {value to be added in Singly linkedlist} val 
+   */
+  addSinglyListNodeToFront(val) {
+    const node = this.newSinglyLinkedListNode(val);
+    if (!this.head) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      node.next = this.head;
+      this.head = node
+    }
+  }
+
+  /**
+   * adds a node in doubly linkedlist
+   * @param {value to be added in Singly linkedlist} val 
+   */
+  addDoublyListNodeToFront(val) {
+    const node = this.newDoublyLinkedListNode(val);
+    if(!this.head) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
+    }
+  }
+
+  /**
+   * @What Adds a node to the end of the list.
+   * @Params {value of the node} val 
+   */
+  addLast(val) {
+    switch(this.config.type) {
+      case LinkedList.listType.SINGLE:
+        this.addSinglyListNodeToBack(val);
+        break;
+
+      case LinkedList.listType.DOUBLE:
+        this.addDoublyListNodeToBack(val);
+        break;
+    }
+
+    this.size++;
+  }
+
+  /**
+   * @What adds a node to the end of list.
+   * @Params {value of the node} val 
+   */
+  addSinglyListNodeToBack(val) {
+    const node = this.newSinglyLinkedListNode(val);
+    if(!this.tail) {
+      this.tail = node;
+      this.head = this.tail;
+    } else {
+      this.tail.next = node;
+      this.tail = this.tail.next;
+    }
+  }
+
+  /**
+   * @What adds a node to the end of the list.
+   * @Params {value of the node} val 
+   */
+  addDoublyListNodeToBack(val) {
+    const node = this.newDoublyLinkedListNode(val);
+    if(!this.tail) {
+      this.tail = node;
+      this.head = this.tail;
+    } else {
+      this.tail.next = node;
+      node.prev = this.tail;
+      this.tail = node;
+    }
+  }
+
+  /**
+   * @What Prints list on console
+   */
+  print() {
+    var list = [];
+    var runner = this.head;
+    while (runner) {
+      list.push(runner.data);
+      runner = runner.next;
+    }
+
+    console.log("[ " + list.join("->") + " ]");
+  }
+}
+
+
 module.exports.PriorityQueue = PriorityQueue;
 module.exports.Stack = Stack;
+module.exports.LinkedList = LinkedList;
