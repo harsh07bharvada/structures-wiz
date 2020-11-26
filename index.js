@@ -321,7 +321,7 @@ class LinkedList {
   /**
    * @What Creates a new node
    * @Params {value of the node} val 
-   */ 
+   */
   createNewNode(val = '') {
     return {
       val,
@@ -375,11 +375,11 @@ class LinkedList {
   /**
    * @What Removes a node from the beginning of the list. 
    */
-  removeAtHead(){
-    if(this.head === this.tail){
+  removeAtHead() {
+    if (this.head === this.tail) {
       this.head = null;
       this.tail = null;
-    }else{
+    } else {
       this.head = this.head.next;
       this.head.prev = null;
     }
@@ -389,15 +389,86 @@ class LinkedList {
   /**
    * @What Removes a node from the end of the list. 
    */
-  removeAtTail(){
-    if(this.head === this.tail){
+  removeAtTail() {
+    if (this.head === this.tail) {
       this.head = null;
       this.tail = null;
-    }else{
+    } else {
       this.tail = this.tail.prev;
       this.tail.next = null;
     }
     this.size = this.size ? this.size - 1 : 0;
+  }
+  /**
+   * @What Sorts the LinkedList using Merge Sort
+   */
+  sort() {
+    let runnerHead = this.head;
+    this.head = this.sortUtil(runnerHead);
+  }
+
+  /**
+   * @What Utility for sorting the LinkedList using Merge Sort
+   */
+  sortUtil(runnerHead) {
+    if (!runnerHead || !runnerHead.next) {
+      return runnerHead;
+    }
+
+    const [left, right] = this.split(runnerHead);
+    const root = this.createNewNode(null);
+
+    return this.merge(root, this.sortUtil(left), this.sortUtil(right));
+  }
+
+  /**
+   * @What Splits the list into 2 halves to sort individually
+   */
+  split(node) {
+    let slow = node,
+      fast = node,
+      left = node,
+      right = null;
+    while (fast.next && fast.next.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    right = slow.next;
+    right.prev = null;
+    slow.next = null;
+    return [left, right];
+  }
+
+  /**
+   * @What Merges the two sorted linkedlists in a sorted manner
+   */
+  merge(root, left, right) {
+    let pointer = root;
+    while (left || right) {
+      if (!left) {
+        pointer.next = right;
+        right.prev = pointer;
+        right = right.next;
+      } else if (!right) {
+        pointer.next = left;
+        left.prev = pointer;
+        left = left.next;
+      } else {
+        if (left.val < right.val) {
+          pointer.next = left;
+          left.prev = pointer;
+          left = left.next;
+        } else {
+          pointer.next = right;
+          right.prev = pointer;
+          right = right.next;
+        }
+      }
+
+      pointer = pointer.next;
+      this.tail = pointer;
+    }
+    return root.next;
   }
 
   /**
@@ -416,8 +487,6 @@ class LinkedList {
       console.log("Linked List is empty")
   }
 }
-
-
 
 module.exports.PriorityQueue = PriorityQueue;
 module.exports.Stack = Stack;
