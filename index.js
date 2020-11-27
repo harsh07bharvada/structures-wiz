@@ -486,6 +486,13 @@ class LinkedList {
     else
       console.log("Linked List is empty")
   }
+
+  /**
+   * @What Returns the head
+   */
+  getHead(){
+    return this.head;
+  }
 }
 
 module.exports.PriorityQueue = PriorityQueue;
