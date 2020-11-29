@@ -493,6 +493,13 @@ class LinkedList {
   getHead(){
     return this.head;
   }
+
+  /**
+   * @What Returns the tail
+   */
+  getTail(){
+    return this.tail;
+  }
 }
 
 module.exports.PriorityQueue = PriorityQueue;
