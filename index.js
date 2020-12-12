@@ -500,6 +500,19 @@ class LinkedList {
   getTail(){
     return this.tail;
   }
+
+  /**
+   * @What Returns the list in array format
+   */
+  getArray(){
+    let runner = this.head;
+    let resultArray = [];
+    while(runner){
+      resultArray.push(runner.val);
+      runner = runner.next;
+    }
+    return resultArray;
+  }
 }
 
 module.exports.PriorityQueue = PriorityQueue;

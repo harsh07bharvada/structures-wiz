@@ -56,6 +56,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
             - [sort](#ll-sort)
             - [getHead](#ll-getHead)
             - [getTail](#ll-getTail)
+            - [getArray](#ll-getArray)
 	
 - [Contribute](#contribute)
 - [License](#license)
@@ -756,6 +757,27 @@ linkedList.print(); //5 -> 22 -> 15 -> NULL
 
 const currentTail = linkedList.getTail();
 console.log("Tail Value:",currentHead.val);//Head Value: 15
+```
+
+
+#### getArray() <a name="ll-getArray"></a>
+Returns the head node of the LinkedList
+
+```javascript
+import { LinkedList } from 'structures-wiz';
+
+const linkedList = new LinkedList();
+
+linkedList.addAtHead(22);
+
+linkedList.addAtHead(5);
+
+linkedList.addAtTail(15);
+
+linkedList.print(); //5 -> 22 -> 15 -> NULL
+
+const array = linkedList.getArray();
+console.log("List converted to Array:",array);//[5, 22, 15]
 ```
 
 ## Contribute
