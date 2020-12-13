@@ -513,6 +513,15 @@ class LinkedList {
     }
     return resultArray;
   }
+
+  /**
+   * @What Clears the LL
+   */
+  clear(){
+    this.size = 0;
+    this.head = null;
+    this.tail = null;
+  }
 }
 
 module.exports.PriorityQueue = PriorityQueue;
