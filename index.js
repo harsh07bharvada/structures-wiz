@@ -220,6 +220,14 @@ class PriorityQueue {
       pointer--;
     }
   }
+
+  /**
+   * @What - Clears the PQ
+   */
+  clear(){
+    this.heap = [];
+    this.height = -1;
+  }
 }
 
 class Stack {

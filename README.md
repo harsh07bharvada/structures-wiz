@@ -32,6 +32,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 		    - [getLeafNodes](#pq-getLeafNodes)
 		    - [print](#pq-print)
 		    - [printSortedHeap](#pq-printSortedHeap)
+        - [clear](#pq-clear)
     - [Stacks](#stacks)
 	    - [Instantiation](#st-instantiation)
 	    - [Methods](#st-methods)
@@ -411,6 +412,39 @@ priorityQ.printSortedHeap();
 ]
 */
 ```
+####  clear() <a name="pq-clear"></a>
+
+Clears the queue.
+```javascript
+
+import { PriorityQueue } from  'structures-wiz';
+
+const  priorityQ  =  new  PriorityQueue();
+
+priorityQ.enqueue(10, 100);
+priorityQ.enqueue(20, 80);
+priorityQ.enqueue(60, 90);
+priorityQ.enqueue(40, 20);
+priorityQ.enqueue(70, 200);
+priorityQ.enqueue(50, 40);
+
+priorityQ.print();
+/*
+[
+  [ 70, 200 ],
+  [ 10, 100 ],
+  [ 60, 90 ],
+  [ 40, 20 ],
+  [ 20, 80 ],
+  [ 50, 40 ]
+]
+*/
+
+priorityQ.clear();
+
+priorityQ.print(); // []
+```
+
 <hr>
 
 ### Stack
