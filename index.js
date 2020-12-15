@@ -228,6 +228,13 @@ class PriorityQueue {
     this.heap = [];
     this.height = -1;
   }
+
+  /**
+   * @What - Returns heap
+   */
+  getHeap(){
+    return this.heap;
+  }
 }
 
 class Stack {

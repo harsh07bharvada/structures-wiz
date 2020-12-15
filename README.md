@@ -25,6 +25,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 		    - [enqueue](#pq-enqueue)
 		    - [dequeue](#pq-dequeue)
 		    - [peek](#pq-peek)
+        - [getHeap](#pq-getHeap)
 		    - [getSortedHeap](#pq-getSortedHeap)
 		    - [getKth](#pq-getKth)
 		    - [getHeight](#pq-getHeight)
@@ -236,6 +237,35 @@ priorityQ.enqueue(50, 40);
 
 const peekValue = priorityQ.peek();
 console.log("Peak Value is :",peekValue); //[ 70 , 200 ]
+
+```
+
+####  getHeap() <a name="pq-getHeap"></a>
+
+Returns the current heap 
+```javascript
+
+import { PriorityQueue } from  'structures-wiz';
+
+const  priorityQ  =  new  PriorityQueue();
+
+priorityQ.enqueue(10, 100);
+priorityQ.enqueue(20, 80);
+priorityQ.enqueue(60, 90);
+priorityQ.enqueue(40, 20);
+priorityQ.enqueue(70, 200);
+priorityQ.enqueue(50, 40);
+
+const Heap = priorityQ.getHeap();
+console.log("Heap is :",Heap);
+/*[
+  [ 70, 200 ],
+  [ 10, 100 ],
+  [ 60, 90 ],
+  [ 40, 20 ],
+  [ 20, 80 ],
+  [ 50, 40 ]
+]*/
 
 ```
 
