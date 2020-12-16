@@ -224,7 +224,7 @@ class PriorityQueue {
   /**
    * @What - Clears the PQ
    */
-  clear(){
+  clear() {
     this.heap = [];
     this.height = -1;
   }
@@ -232,7 +232,7 @@ class PriorityQueue {
   /**
    * @What - Returns heap
    */
-  getHeap(){
+  getHeap() {
     return this.heap;
   }
 }
@@ -505,24 +505,24 @@ class LinkedList {
   /**
    * @What Returns the head
    */
-  getHead(){
+  getHead() {
     return this.head;
   }
 
   /**
    * @What Returns the tail
    */
-  getTail(){
+  getTail() {
     return this.tail;
   }
 
   /**
    * @What Returns the list in array format
    */
-  getArray(){
+  getArray() {
     let runner = this.head;
     let resultArray = [];
-    while(runner){
+    while (runner) {
       resultArray.push(runner.val);
       runner = runner.next;
     }
@@ -532,10 +532,25 @@ class LinkedList {
   /**
    * @What Clears the LL
    */
-  clear(){
+  clear() {
     this.size = 0;
     this.head = null;
     this.tail = null;
+  }
+
+
+  /**
+   * @param function_which_accepts_each_node_and_updates_value
+   * @What Map a runner on all values of linked list just like map of arrays
+   */
+  mapRunner(mapFunction) {
+    if (typeof mapFunction === 'function') {
+      let runner = this.head;
+      while (runner) {
+        mapFunction(runner);
+        runner = runner.next;
+      }
+    }
   }
 }
 

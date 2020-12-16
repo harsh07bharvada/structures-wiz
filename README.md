@@ -59,6 +59,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
             - [getHead](#ll-getHead)
             - [getTail](#ll-getTail)
             - [getArray](#ll-getArray)
+            - [mapRunner](#ll-mapRunner)
             - [clear](#ll-clear)
 	
 - [Contribute](#contribute)
@@ -864,6 +865,31 @@ linkedList.print(); //5 -> 22 -> 15 -> NULL
 
 linkedList.clear();
 linkedList.print()//Linked List is empty
+```
+
+
+#### mapRunner() <a name="ll-mapRunner"></a>
+Runs a function passed to all the nodes of linked list and updates the value just like map method of an Array
+
+```javascript
+import { LinkedList } from 'structures-wiz';
+
+function double(node){
+  node.val *= 2;
+}
+
+const linkedList = new LinkedList();
+
+linkedList.addAtHead(22);
+
+linkedList.addAtHead(5);
+
+linkedList.addAtTail(15);
+
+linkedList.print(); //5 -> 22 -> 15 -> NULL
+
+linkedList.mapRunner(double);
+linkedList.print()//10 -> 44 -> 30 -> NULL
 ```
 
 ## Contribute
