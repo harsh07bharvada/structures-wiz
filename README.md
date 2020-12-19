@@ -15,6 +15,8 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 
 - [Installation](#installation)
 - [Usage](#usage)
+    - [Algorithms](#algo)
+      - [Longest Increasing Subsequence Length](#llisl)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -85,7 +87,26 @@ npm install structures-wiz
 
 ## Usage
 
-### Priority Queue
+### Algorithms <a name="algo"></a>
+List of useful handy algorithms implemented in an optimised manner
+
+#### Longest Increasing Subsequence Length<a name="llisl"></a>
+Method to find the length of the longest increasing subsequence from an array.
+It is implemented using Dynamic programming and Patience Sort in O(n logn) time complexity.
+
+```javascript
+
+import { getLongestIncreasingSubsequenceLen } from  'structures-wiz';
+
+const  list  =  [10,9,2,5,3,7,101,18];
+
+const  longestLen  =  getLongestIncreasingSubsequenceLen(list);
+
+console.log("Length of longest increasing subsequence is :", longestLen);// 4
+
+```
+
+### Priority Queue <a name="priority-queue"></a>
 Priority Queues are an extension to queues. Each entry into a Priority Queue is based on its Priority.
 The advantage of using Priority Queues is that insertion of elements takes O(log n) time because they are implementation is based on Max Heap or Min Heap.
 
