@@ -17,6 +17,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 - [Usage](#usage)
     - [Algorithms](#algo)
       - [Longest Increasing Subsequence Length](#llisl)
+      - [Patience Sort](#pat-sort)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -103,6 +104,22 @@ const  list  =  [10,9,2,5,3,7,101,18];
 const  longestLen  =  getLongestIncreasingSubsequenceLen(list);
 
 console.log("Length of longest increasing subsequence is :", longestLen);// 4
+
+```
+
+#### Patience Sort<a name="pat-sort"></a>
+Patience sort uses series of increasing stacks like the game of Solitaire to sort a list
+in worst case of O(n log n ) time complexity.
+
+```javascript
+
+import { getPatienceSortedList } from  'structures-wiz';
+
+const  list  =  [20,3,1,5,7,2,2,6,99,0];
+
+const  sortedList  =  getPatienceSortedList(list);
+
+console.log("Sorted List is :", sortedList);// [ 0, 1, 2,  2,  3, 5, 6, 7, 20, 99]
 
 ```
 
