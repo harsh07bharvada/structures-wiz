@@ -109,7 +109,7 @@ console.log("Length of longest increasing subsequence is :", longestLen);// 4
 
 #### Patience Sort<a name="pat-sort"></a>
 Patience sort uses series of increasing stacks like the game of Solitaire to sort a list
-in worst case of O(n log n ) time complexity.
+in worst case of O(n log n ) time complexity. It accepts two parameters first is the list to be sorted, second is for debugger statements to see how the list is being sorted for better understanding.
 
 ```javascript
 
@@ -117,9 +117,13 @@ import { getPatienceSortedList } from  'structures-wiz';
 
 const  list  =  [20,3,1,5,7,2,2,6,99,0];
 
+//Debugging OFF
 const  sortedList  =  getPatienceSortedList(list);
 
 console.log("Sorted List is :", sortedList);// [ 0, 1, 2,  2,  3, 5, 6, 7, 20, 99]
+
+//Debugging ON
+const  sortedDebugList  =  getPatienceSortedList(list, true);
 
 ```
 
