@@ -17,6 +17,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 - [Usage](#usage)
     - [Algorithms](#algo)
       - [Longest Increasing Subsequence Length](#llisl)
+      - [Is Cycle Present in a Graph](#isCyclePresent)
       - [Patience Sort](#pat-sort)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
@@ -104,6 +105,27 @@ const  list  =  [10,9,2,5,3,7,101,18];
 const  longestLen  =  getLongestIncreasingSubsequenceLen(list);
 
 console.log("Length of longest increasing subsequence is :", longestLen);// 4
+
+```
+
+
+#### Is Cycle Present in Graph<a name="isCyclePresent"></a>
+Method to find the cycle is to use Topological sort. First we find the inDegree of each node and then add those 
+which are not dependent on any other node to the queue and traverse through the queue until all of each childs are 
+traversed, meanwhile reducing the inDegree and adding to the queue when inDegree is 0.
+
+Param1: Number of nodes
+Param2: List of edges in an array where each edge is in the format [outEdge, inEdge]
+
+```javascript
+
+import { isCyclePresentInGraph } from  'structures-wiz';
+
+const  edges  =  [[1,0]];
+
+const  isCyclePresent  =  isCyclePresentInGraph(2, edges);
+
+console.log("Is Cycle Present :", isCyclePresent);// false
 
 ```
 
