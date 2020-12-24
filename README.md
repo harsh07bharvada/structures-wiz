@@ -123,7 +123,11 @@ import { isCyclePresentInGraph } from  'structures-wiz';
 
 const  edges  =  [[1,0]];
 
+//Way 1 - Debugger OFF
 const  isCyclePresent  =  isCyclePresentInGraph(2, edges);
+
+//Way 1 - Debugger ON
+const  isCyclePresentDebugON  =  isCyclePresentInGraph(2, edges, true);
 
 console.log("Is Cycle Present :", isCyclePresent);// false
 
