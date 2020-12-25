@@ -19,6 +19,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Longest Increasing Subsequence Length](#llisl)
       - [Is Cycle Present in a Graph](#isCyclePresent)
       - [Patience Sort](#pat-sort)
+      - [Topological Sort in a Graph](#top-sort)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -150,6 +151,21 @@ console.log("Sorted List is :", sortedList);// [ 0, 1, 2,  2,  3, 5, 6, 7, 20, 9
 
 //Debugging ON
 const  sortedDebugList  =  getPatienceSortedList(list, true);
+
+```
+
+#### Topologically Sort in a Graph <a name="top-sort"></a>
+Topologically sort in a graph helps in build algorithms where few packages are dependent on several other packages to get built before them. Topological Sort gives the sequence in which one can build the packages without coming into deadlock situation
+
+```javascript
+
+import { getTopologicallySortedGraph } from  'structures-wiz';
+
+const  edges  = [[0,2],[1,2],[1,3],[2,4],[3,5],[4,5],[4,7],[5,6]];
+
+const  topologicallySortedList  =  getTopologicallySortedGraph(8, edges);
+
+console.log("Topologically Sorted List is :", topologicallySortedList);// [ 6, 7, 5, 4, 3, 2, 1, 0]
 
 ```
 
