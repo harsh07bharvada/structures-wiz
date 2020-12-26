@@ -163,7 +163,11 @@ import { getTopologicallySortedGraph } from  'structures-wiz';
 
 const  edges  = [[0,2],[1,2],[1,3],[2,4],[3,5],[4,5],[4,7],[5,6]];
 
+//DEBUGGER OFF
 const  topologicallySortedList  =  getTopologicallySortedGraph(8, edges);
+
+//DEBUGGER ON
+const  topologicallySortedListDebug  =  getTopologicallySortedGraph(8, edges, true);
 
 console.log("Topologically Sorted List is :", topologicallySortedList);// [ 6, 7, 5, 4, 3, 2, 1, 0]
 
