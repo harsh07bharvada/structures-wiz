@@ -17,6 +17,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 - [Usage](#usage)
     - [Algorithms](#algo)
       - [Longest Increasing Subsequence Length](#llisl)
+      - [Shortest Unsorted Continuous Subarray Length](#sucs)
       - [Is Cycle Present in a Graph](#isCyclePresent)
       - [Patience Sort](#pat-sort)
       - [Topological Sort in a Graph](#top-sort)
@@ -106,6 +107,21 @@ const  list  =  [10,9,2,5,3,7,101,18];
 const  longestLen  =  getLongestIncreasingSubsequenceLen(list);
 
 console.log("Length of longest increasing subsequence is :", longestLen);// 4
+
+```
+
+#### Shortest Unsorted Continuous Subarray Length<a name="sucs"></a>
+Method to find the length of the shortest unsorted continuous subarray from an input array.
+
+```javascript
+
+import { getShortestUnsortedSubarray } from  'structures-wiz';
+
+const  list  =  [2,6,4,8,10,9,15];
+
+const  shortedSubArrayLen  =  getShortestUnsortedSubarray(list);
+
+console.log("Length of hortest Unsorted Continuous Subarray is :", shortedSubArrayLen);// 5
 
 ```
 
