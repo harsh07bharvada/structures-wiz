@@ -1,5 +1,3 @@
-const { getPatienceSortedList } = require("../sorting/getPatienceSortedList.sort");
-
 const getShortestUnsortedSubarray = nums => {
     
     if(!nums || !Array.isArray(nums)){
