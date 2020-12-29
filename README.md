@@ -17,6 +17,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 - [Usage](#usage)
     - [Algorithms](#algo)
       - [Longest Increasing Subsequence Length](#llisl)
+      - [Longest Common Subsequence Length](#lcsl)
       - [Shortest Unsorted Continuous Subarray Length](#sucs)
       - [Is Cycle Present in a Graph](#isCyclePresent)
       - [Patience Sort](#pat-sort)
@@ -93,6 +94,23 @@ npm install structures-wiz
 
 ### Algorithms <a name="algo"></a>
 List of useful handy algorithms implemented in an optimised manner
+
+#### Longest Common Subsequence Length<a name="lcsl"></a>
+Method to find the length of the longest common subsequence from an array.
+It is implemented using Dynamic programming.
+
+```javascript
+
+import { getLongestCommonSubsequenceLen } from  'structures-wiz';
+
+const  text1 = "abcde";
+const text2 = "ace";
+
+const  longestLen  =  getLongestCommonSubsequenceLen(text1, text2);
+
+console.log("Length of longest common subsequence is :", longestLen);// 3
+
+```
 
 #### Longest Increasing Subsequence Length<a name="llisl"></a>
 Method to find the length of the longest increasing subsequence from an array.
