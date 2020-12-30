@@ -106,7 +106,11 @@ import { getLongestCommonSubsequenceLen } from  'structures-wiz';
 const  text1 = "abcde";
 const text2 = "ace";
 
+//DEBUGGER OFF
 const  longestLen  =  getLongestCommonSubsequenceLen(text1, text2);
+
+//DEBUGGER ON
+const  longestLenOn  =  getLongestCommonSubsequenceLen(text1, text2, true);
 
 console.log("Length of longest common subsequence is :", longestLen);// 3
 
