@@ -20,6 +20,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Longest Common Subsequence Length](#lcsl)
       - [Shortest Unsorted Continuous Subarray Length](#sucs)
       - [Is Cycle Present in a Graph](#isCyclePresent)
+      - [Diameter of a Binary Tree](#dbt)
       - [Patience Sort](#pat-sort)
       - [Topological Sort in a Graph](#top-sort)
     - [Priority Queues](#priority-queue)
@@ -169,6 +170,28 @@ const  isCyclePresent  =  isCyclePresentInGraph(2, edges);
 const  isCyclePresentDebugON  =  isCyclePresentInGraph(2, edges, true);
 
 console.log("Is Cycle Present :", isCyclePresent);// false
+
+```
+
+#### Diameter of a Binary Tree<a name="dbt"></a>
+The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between two end nodes. This path may or may not be passing through the root node.
+
+Params: root of the Tree
+
+Definition for a binary tree node.
+#####function TreeNode(val, left, right) {
+######this.val = (val === undefined ? 0 : val)
+######his.left = (left === undefined ? null : left)
+######this.right = (right === undefined ? null : right)
+#####}
+
+```javascript
+
+import { getDiameterOfBinaryTree } from  'structures-wiz';
+
+const  diameter =  getDiameterOfBinaryTree(root); //[1,2,3,4,5]
+
+console.log("Diameter is :", diameter);// 3
 
 ```
 
