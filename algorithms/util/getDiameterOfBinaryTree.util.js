@@ -1,4 +1,4 @@
-const getDiameterOfBinaryTree = root => {
+const getDiameterOfBinaryTree = (root, isDebuggerOn) => {
     if (!root)
         return 0;
     let max = -Infinity;
@@ -9,6 +9,9 @@ const getDiameterOfBinaryTree = root => {
             const right = traverse(node.right, depth + 1);
             if (left + right > max) {
                 max = left + right;
+            }
+            if(isDebuggerOn){
+                console.log('Node:',node.val,'Max depth:',Math.max(left, right) + 1);
             }
             return Math.max(left, right) + 1;
         } else {

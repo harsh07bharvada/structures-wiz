@@ -189,7 +189,11 @@ Definition for a binary tree node.
 
 import { getDiameterOfBinaryTree } from  'structures-wiz';
 
-const  diameter =  getDiameterOfBinaryTree(root); //[1,2,3,4,5]
+//Debugging OFF
+const  diameter =  getDiameterOfBinaryTree(root); //Binary Tree - [1,2,3,4,5]
+
+//Debugging ON
+const  diameterDebugON =  getDiameterOfBinaryTree(root, true); //Binary Tree - [1,2,3,4,5]
 
 console.log("Diameter is :", diameter);// 3
 
