@@ -226,15 +226,16 @@ Topologically sort in a graph helps in build algorithms where few packages are d
 
 import { getTopologicallySortedGraph } from  'structures-wiz';
 
-const  edges  = [[0,2],[1,2],[1,3],[2,4],[3,5],[4,5],[4,7],[5,6]];
+//[[inEdge, outEdge]] - FORMAT
+const  edges  = [[1,0],[2,0],[3,1],[3,2]];
 
 //DEBUGGER OFF
-const  topologicallySortedList  =  getTopologicallySortedGraph(8, edges);
+const  topologicallySortedList  =  getTopologicallySortedGraph(4, edges);
 
 //DEBUGGER ON
-const  topologicallySortedListDebug  =  getTopologicallySortedGraph(8, edges, true);
+const  topologicallySortedListDebug  =  getTopologicallySortedGraph(4, edges, true);
 
-console.log("Topologically Sorted List is :", topologicallySortedList);// [ 6, 7, 5, 4, 3, 2, 1, 0]
+console.log("Topologically Sorted List is :", topologicallySortedList);// [0,1,2,3]
 
 ```
 
