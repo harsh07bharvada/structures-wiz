@@ -22,6 +22,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Is Cycle Present in a Graph](#isCyclePresent)
       - [Diameter of a Binary Tree](#dbt)
       - [Patience Sort](#pat-sort)
+      - [Merge Sort](#merge-sort)
       - [Topological Sort in a Graph](#top-sort)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
@@ -216,6 +217,21 @@ console.log("Sorted List is :", sortedList);// [ 0, 1, 2,  2,  3, 5, 6, 7, 20, 9
 
 //Debugging ON
 const  sortedDebugList  =  getPatienceSortedList(list, true);
+
+```
+
+#### Merge Sort<a name="merge-sort"></a>
+Merge sort uses the concept of divide-and-conquer to sort the given list of elements. It breaks down the problem into smaller subproblems until they become simple enough to solve directly. Worst case time complexity is O(n logn)
+
+```javascript
+
+import { getMergeSortedList } from  'structures-wiz';
+
+const  list  =  [20,3,1,5,7,2,2,6,99,0];
+
+const  sortedList  =  getMergeSortedList(list);
+
+console.log("Sorted List is :", sortedList);// [ 0, 1, 2,  2,  3, 5, 6, 7, 20, 99]
 
 ```
 
