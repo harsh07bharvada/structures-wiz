@@ -21,6 +21,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Shortest Unsorted Continuous Subarray Length](#sucs)
       - [Is Cycle Present in a Graph](#isCyclePresent)
       - [Diameter of a Binary Tree](#dbt)
+      - [Is Sorted List](is-sorted)
       - [Patience Sort](#pat-sort)
       - [Merge Sort](#merge-sort)
       - [Topological Sort in a Graph](#top-sort)
@@ -197,6 +198,21 @@ const  diameter =  getDiameterOfBinaryTree(root); //Binary Tree - [1,2,3,4,5]
 const  diameterDebugON =  getDiameterOfBinaryTree(root, true); //Binary Tree - [1,2,3,4,5]
 
 console.log("Diameter is :", diameter);// 3
+
+```
+
+#### Is Sorted List<a name="is-sorted"></a>
+Function to check if the list is sorted or not in an ascending order.
+
+```javascript
+
+import { isSortedList } from  'structures-wiz';
+
+const  list  =  [20,3,1,5,7,2,2,6,99,0];
+
+const  isSorted  =  isSortedList(list);
+
+console.log("Is List Sorted:", isSorted);// false
 
 ```
 

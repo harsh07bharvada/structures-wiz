@@ -1,6 +1,7 @@
 const { Stack } = require("./data-structures/Stack");
 const { LinkedList } = require("./data-structures/LinkedList");
 const { PriorityQueue } = require("./data-structures/PriorityQueue");
+const { isSortedList } = require("./algorithms/sorting/isSortedList.sort");
 const { isCyclePresentInGraph } = require("./algorithms/util/isCyclePresent.util");
 const { getMergeSortedList } = require("./algorithms/sorting/getMergeSortedList.sort");
 const { getPatienceSortedList }  = require("./algorithms/sorting/getPatienceSortedList.sort");
@@ -10,9 +11,9 @@ const { getTopologicallySortedGraph } = require("./algorithms/sorting/getTopolog
 const { getLongestCommonSubsequenceLen } = require("./algorithms/util/getLongestCommonSubsequenceLen.util");
 const { getLongestIncreasingSubsequenceLen } = require("./algorithms/util/getLongestIncreasingSubsequenceLen");
 
-
 module.exports.Stack = Stack;
 module.exports.LinkedList = LinkedList;
+module.exports.isSortedList = isSortedList;
 module.exports.PriorityQueue = PriorityQueue;
 module.exports.getMergeSortedList = getMergeSortedList;
 module.exports.isCyclePresentInGraph = isCyclePresentInGraph;
