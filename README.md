@@ -245,7 +245,11 @@ import { getMergeSortedList } from  'structures-wiz';
 
 const  list  =  [20,3,1,5,7,2,2,6,99,0];
 
+//Debugging OFF
 const  sortedList  =  getMergeSortedList(list);
+
+//Debugging ON
+const  sortedDebugList  =  getMergeSortedList(list, true);
 
 console.log("Sorted List is :", sortedList);// [ 0, 1, 2,  2,  3, 5, 6, 7, 20, 99]
 

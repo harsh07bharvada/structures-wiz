@@ -1,15 +1,25 @@
-const getMergeSortedList = list => {
+const getMergeSortedList = (list, isDebuggerOn )=> {
     if (!list || !Array.isArray(list)) {
+        if(isDebuggerOn){
+            console.log('Invalid Input');
+        }
         return [];
     }
     const merge = (left, right) => {
         let res = [];
+        if(isDebuggerOn){
+            console.log('Merging-',left,' & ',right);
+        }
         while (left.length && right.length) {
             if (left[0] < right[0]) {
                 res.push(left.shift());
             } else {
                 res.push(right.shift());
             }
+        }
+        if(isDebuggerOn){
+            console.log('After Merging-',[...res, ...left, ...right]);
+            console.log("---------------------------------------")
         }
         return [...res, ...left, ...right];
     }
