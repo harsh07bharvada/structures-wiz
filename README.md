@@ -16,6 +16,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 - [Installation](#installation)
 - [Usage](#usage)
     - [Algorithms](#algo)
+      - [Maximum Sum Subarray](#mss)
       - [Longest Increasing Subsequence Length](#llisl)
       - [Longest Common Subsequence Length](#lcsl)
       - [Shortest Unsorted Continuous Subarray Length](#sucs)
@@ -97,6 +98,22 @@ npm install structures-wiz
 
 ### Algorithms <a name="algo"></a>
 List of useful handy algorithms implemented in an optimised manner
+
+#### Maximum Sum Subarray<a name="mss"></a>
+Method to find the maximum sum of a subarray from an array.
+It is implemented using Kadane's Algorithm with a worst case of O(n) time complexity.
+
+```javascript
+
+import { getMaximumSumSubarray } from  'structures-wiz';
+
+const list = [1,-2,-3,9,7,0,-15,20];
+const  maxSum  =  getMaximumSumSubarray(list);
+
+console.log("Max Sum Subarray is :", maxSum);// 21
+
+```
+
 
 #### Longest Common Subsequence Length<a name="lcsl"></a>
 Method to find the length of the longest common subsequence from an array.
