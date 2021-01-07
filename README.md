@@ -108,7 +108,12 @@ It is implemented using Kadane's Algorithm with a worst case of O(n) time comple
 import { getMaximumSumSubarray } from  'structures-wiz';
 
 const list = [1,-2,-3,9,7,0,-15,20];
+
+//DEBUGGER OFF
 const  maxSum  =  getMaximumSumSubarray(list);
+
+//DEBUGGER ON
+const  maxSumDebugOn  =  getMaximumSumSubarray(list,true);
 
 console.log("Max Sum Subarray is :", maxSum);// 21
 
