@@ -1,6 +1,11 @@
-const getMaximumSumSubarray = list => {
-    if (!list || !Array.isArray(list))
+const getMaximumSumSubarray = (list, isDebuggerOn = false) => {
+    if (!list || !Array.isArray(list)){
+        if(isDebuggerOn){
+            console.log('Invalid input!');
+        }
         return 0;
+    }
+    
 
     let negCount = 0,
         largestNeg = -Infinity,
@@ -17,6 +22,9 @@ const getMaximumSumSubarray = list => {
             sum += list[i];
         }
         ans = Math.max(ans, sum);
+        if(isDebuggerOn){
+            console.log(`Current Max Sum: ${ans}`);
+        }
     }
     if (negCount === list.length)
         return largestNeg;
