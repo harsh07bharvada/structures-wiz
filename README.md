@@ -17,6 +17,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 - [Usage](#usage)
     - [Algorithms](#algo)
       - [Maximum Sum Subarray](#mss)
+      - [Maximum Product Subarray](#mps)
       - [Longest Increasing Subsequence Length](#llisl)
       - [Longest Common Subsequence Length](#lcsl)
       - [Shortest Unsorted Continuous Subarray Length](#sucs)
@@ -116,6 +117,26 @@ const  maxSum  =  getMaximumSumSubarray(list);
 const  maxSumDebugOn  =  getMaximumSumSubarray(list,true);
 
 console.log("Max Sum Subarray is :", maxSum);// 21
+
+```
+
+#### Maximum Product Subarray<a name="mps"></a>
+Method to find the maximum product of a subarray from an array.
+It is implemented using Dynamic Programming with a worst case of O(n) time complexity.
+
+```javascript
+
+import { getMaximumProductSubarray } from  'structures-wiz';
+
+const list = [2,3,-2,4];
+
+//DEBUGGER OFF
+const  maxProd  =  getMaximumProductSubarray(list);
+
+//DEBUGGER ON
+const  maxProdDebugOn  =  getMaximumProductSubarray(list,true);
+
+console.log("Max Product Subarray is :", maxProd);// 6
 
 ```
 
