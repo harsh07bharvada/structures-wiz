@@ -14,6 +14,9 @@ const getMaximumProductSubarray = (list, isDebuggerOn = false) => {
         currentMaxProd = Math.max(list[i], list[i] * prevMaxProd, list[i] * prevMinProd);
         currentMinProd = Math.min(list[i], list[i] * prevMaxProd, list[i] * prevMinProd);
         ans = Math.max(ans, currentMaxProd);
+        if (isDebuggerOn) {
+            console.log('CurrentMaxProd:',currentMaxProd,'CurrentMinProd:',currentMinProd,'Current Ans:',ans);
+        }
         prevMinProd = currentMinProd;
         prevMaxProd = currentMaxProd;
     }
