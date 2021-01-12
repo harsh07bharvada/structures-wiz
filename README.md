@@ -253,7 +253,14 @@ import { isSortedList } from  'structures-wiz';
 
 const  list  =  [20,3,1,5,7,2,2,6,99,0];
 
+//Ascending Order - (default)
 const  isSorted  =  isSortedList(list);
+
+//Descending Order - pass a comparator as second argument
+const  isSorted  =  isSortedList(list, (a,b)=> b-a);
+
+//Debugger ON (3rd Argument)
+const  isSorted  =  isSortedList(list, (a,b)=> b-a, true);
 
 console.log("Is List Sorted:", isSorted);// false
 
