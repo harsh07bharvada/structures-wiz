@@ -1,4 +1,8 @@
 const getLongestCommonSubsequenceLen = (text1 = '', text2 = '', isDebuggerOn = false) => {
+
+    if(!text1 || !text2)
+    return 0;
+    
     let arr = new Array(text1.length + 1).fill(0);
     for (let i = 0; i < text1.length + 1; i++)
         arr[i] = new Array(text2.length + 1).fill(0)
