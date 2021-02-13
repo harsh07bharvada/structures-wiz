@@ -27,6 +27,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Patience Sort](#pat-sort)
       - [Merge Sort](#merge-sort)
       - [Topological Sort in a Graph](#top-sort)
+      - [Is Increasing Triplet Subsequence Present](#increasing-triplet)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -322,6 +323,22 @@ const  topologicallySortedList  =  getTopologicallySortedGraph(4, edges);
 const  topologicallySortedListDebug  =  getTopologicallySortedGraph(4, edges, true);
 
 console.log("Topologically Sorted List is :", topologicallySortedList);// [0,1,2,3]
+
+```
+
+#### Is Increasing Triplet Present <a name="increasing-triplet"></a>
+Algorithm to find if an increasing triplet is found in an array or not. The implemenation takes O(N) of Time complexity and O(1) of space complexity.
+
+```javascript
+
+import { isIncreasingTripletSubsequencePresent } from  'structures-wiz';
+
+
+const  list  = [1,2,3,4,5];
+
+const  isIncTripletPresent  =  isIncreasingTripletSubsequencePresent(list);
+
+console.log("Is Increasing Triplet present :", isIncTripletPresent);// true
 
 ```
 

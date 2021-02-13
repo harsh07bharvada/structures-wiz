@@ -12,6 +12,7 @@ const { getShortestUnsortedSubarray } = require("./algorithms/util/getShortestUn
 const { getTopologicallySortedGraph } = require("./algorithms/sorting/getTopologicallySortedGraph.sort");
 const { getLongestCommonSubsequenceLen } = require("./algorithms/util/getLongestCommonSubsequenceLen.util");
 const { getLongestIncreasingSubsequenceLen } = require("./algorithms/util/getLongestIncreasingSubsequenceLen");
+const { isIncreasingTripletSubsequencePresent } = require("./algorithms/util/isIncreasingTripletSubsequencePresent.util");
 
 module.exports.Stack = Stack;
 module.exports.LinkedList = LinkedList;
@@ -27,3 +28,4 @@ module.exports.getShortestUnsortedSubarray = getShortestUnsortedSubarray;
 module.exports.getTopologicallySortedGraph = getTopologicallySortedGraph;
 module.exports.getLongestCommonSubsequenceLen = getLongestCommonSubsequenceLen;
 module.exports.getLongestIncreasingSubsequenceLen = getLongestIncreasingSubsequenceLen;
+module.exports.isIncreasingTripletSubsequencePresent = isIncreasingTripletSubsequencePresent;
