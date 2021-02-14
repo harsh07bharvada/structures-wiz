@@ -1,5 +1,5 @@
 const isIncreasingTripletSubsequencePresent = nums => {
-    if (!nums || nums.length < 3) {
+    if (!nums || !Array.isArray(nums) || nums.length < 3) {
         return false;
     }
     let first = Infinity,
