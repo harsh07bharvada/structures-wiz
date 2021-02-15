@@ -28,6 +28,7 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Merge Sort](#merge-sort)
       - [Topological Sort in a Graph](#top-sort)
       - [Is Increasing Triplet Subsequence Present](#increasing-triplet)
+      - [Number of Balanced Binary Trees possible of Height h ](#num-bbt-h)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -339,6 +340,23 @@ const  list  = [1,2,3,4,5];
 const  isIncTripletPresent  =  isIncreasingTripletSubsequencePresent(list);
 
 console.log("Is Increasing Triplet present :", isIncTripletPresent);// true
+
+```
+
+
+#### Number of Balanced Binary Trees possible of Height h <a name="num-bbt-h"></a>
+Algorithm to find maximum number of Balanced Binary Trees of a given height 'h' using Dynamic Programming in O(h) time complexity.
+
+```javascript
+
+import { getNumberOfBalancedBinaryTrees } from  'structures-wiz';
+
+
+const  h  = 2;
+
+const  maxBBT  =  getNumberOfBalancedBinaryTrees(h);
+
+console.log("Max Number of BBT from h:", maxBBT);// 3
 
 ```
 
