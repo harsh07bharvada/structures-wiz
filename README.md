@@ -28,7 +28,8 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Merge Sort](#merge-sort)
       - [Topological Sort in a Graph](#top-sort)
       - [Is Increasing Triplet Subsequence Present](#increasing-triplet)
-      - [Number of Balanced Binary Trees possible of Height h ](#num-bbt-h)
+      - [Number of Balanced Binary Trees possible of Height 'h' ](#num-bbt-h)
+      - [Number of Unique Binary Trees with 'n' unique nodes](#num-bt)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -357,6 +358,23 @@ const  h  = 2;
 const  maxBBT  =  getNumberOfBalancedBinaryTrees(h);
 
 console.log("Max Number of BBT from h:", maxBBT);// 3
+
+```
+
+
+#### Number of Unique Binary Trees with 'n' unique nodes <a name="num-bt"></a>
+Algorithm to find total of unique binary trees from n unique nodes. This implementation calculates nth Catalan Number using Dynamic Programming and Memoization in O(N^2) Time Complexity and O(N) Space Complexity.
+
+```javascript
+
+import { getUniqueBinaryTreesNum } from  'structures-wiz';
+
+
+const  n  = 3;
+
+const  uniqBT  =  getUniqueBinaryTreesNum(n);
+
+console.log("Number of Unique Binary Trees:", uniqBT);// 5
 
 ```
 
