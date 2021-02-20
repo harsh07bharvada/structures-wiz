@@ -1,5 +1,6 @@
 const { Stack } = require("./data-structures/Stack");
 const { LinkedList } = require("./data-structures/LinkedList");
+const { SegmentTree } = require("./data-structures/SegmentTree");
 const { PriorityQueue } = require("./data-structures/PriorityQueue");
 const { isSortedList } = require("./algorithms/sorting/isSortedList.sort");
 const { isCyclePresentInGraph } = require("./algorithms/util/isCyclePresent.util");
@@ -18,6 +19,7 @@ const { isIncreasingTripletSubsequencePresent } = require("./algorithms/util/isI
 
 module.exports.Stack = Stack;
 module.exports.LinkedList = LinkedList;
+module.exports.SegmentTree = SegmentTree;
 module.exports.isSortedList = isSortedList;
 module.exports.PriorityQueue = PriorityQueue;
 module.exports.getMergeSortedList = getMergeSortedList;
