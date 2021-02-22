@@ -30,6 +30,10 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Is Increasing Triplet Subsequence Present](#increasing-triplet)
       - [Number of Balanced Binary Trees possible of Height 'h' ](#num-bbt-h)
       - [Number of Unique Binary Trees with 'n' unique nodes](#num-bt)
+    - [Segment Tree](#seg-tree)
+	    - [Instantiation](#st-instantiation)
+	    - [Methods](#st-methods)
+        - [getTree](#st-getTree)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
@@ -377,6 +381,38 @@ const  uniqBT  =  getUniqueBinaryTreesNum(n);
 console.log("Number of Unique Binary Trees:", uniqBT);// 5
 
 ```
+
+
+### Segment Tree <a name="seg-tree"></a>
+Segment Trees are one of the best data structures for range query operations especially when update operations are freqeuent. Segment Tree creates a Tree with the original array values at its leaf nodes and its sum, min, max values as each of the pair of leaves as its parent. This makes updation take max of O(log N) time complexity and fetch a range value also O(log N).
+
+#### Instantiation <a name="pq-instantiation"></a>
+
+```javascript
+
+import { SegmentTree } from  'structures-wiz';
+ 
+const segTree = new SegmentTree([5,2,1,3,4,6,7,9,8,3]);
+
+```
+
+#### Methods  <a name="st-methods"></a>
+
+Following are the methods exposed for usage:
+
+####  getTree() <a name="st-getTree"></a>
+
+Gets the Segment Tree for corresponding input list.
+```javascript
+
+import { SegmentTree } from  'structures-wiz';
+
+const segTree = new SegmentTree([5,2,1,3,4,6,7,9,8,3]);
+
+console.log("Tree:",segTree.getTree())
+
+```
+
 
 ### Priority Queue <a name="priority-queue"></a>
 Priority Queues are an extension to queues. Each entry into a Priority Queue is based on its Priority.
