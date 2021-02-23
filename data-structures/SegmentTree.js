@@ -76,6 +76,34 @@ class SegmentTree {
         return Array.from(this.list);
     }
 
+    updateRange(UL = 0, UR = 0, increment = 0) {
+
+        if (!increment)
+            return;
+
+        const low = 0,
+            high = this.list.length - 1;
+        this.updateRangeHelper(low, high, UL, UR, 0, increment);
+    }
+
+    updateRangeHelper(low, high, UL, UR, pos, increment) {
+        if (UL > high || UR < low) {
+            return 0;
+        }
+        if (low === high) {
+            this.list[low] += increment;
+            this.tree[pos] += increment;
+            return;
+        }
+
+        const mid = Math.floor((low + high) / 2);
+        const leftPos = 2 * pos + 1;
+        const rightPos = 2 * pos + 2;
+        this.updateRangeHelper(low, mid, UL, UR, leftPos, increment);
+        this.updateRangeHelper(mid + 1, high, UL, UR, rightPos, increment);
+        this.tree[pos] = this.tree[leftPos] + this.tree[rightPos];
+    }
+
 }
 
 module.exports.SegmentTree = SegmentTree;
