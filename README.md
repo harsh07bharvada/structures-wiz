@@ -413,6 +413,33 @@ console.log("Tree:",segTree.getTree())
 
 ```
 
+####  getList() <a name="st-getList"></a>
+
+Gets the current state of original array of Segment Tree.
+```javascript
+
+import { SegmentTree } from  'structures-wiz';
+
+const segTree = new SegmentTree([5,2,1,3,4,6,7,9,8,3]);
+
+console.log("List:",segTree.getList())
+
+```
+
+####  getRangeSum() <a name="st-getRangeSum"></a>
+
+Gets the Sum of a range from the created Segment Tree.
+```javascript
+
+import { SegmentTree } from  'structures-wiz';
+
+const segTree = new SegmentTree([5,2,1,3,4,6,7,9,8,3]);
+
+//Parameters are lower and upper bound index
+console.log("Sum from 0th index to 2nd index:",segTree.getRangeSum(0, 2))
+
+```
+
 
 ### Priority Queue <a name="priority-queue"></a>
 Priority Queues are an extension to queues. Each entry into a Priority Queue is based on its Priority.
