@@ -34,6 +34,8 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
 	    - [Instantiation](#st-instantiation)
 	    - [Methods](#st-methods)
         - [getTree](#st-getTree)
+        - [getList](#st-getList)
+        - [getRangeSum](#st-getRangeSum)
     - [Priority Queues](#priority-queue)
 	    - [Instantiation](#pq-instantiation)
 	    - [Methods](#pq-methods)
