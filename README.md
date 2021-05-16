@@ -5,7 +5,11 @@
 
 </p>
 
-  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+  ![GitHub forks](https://img.shields.io/github/forks/harsh07bharvada/structures-wiz?style=for-the-badge)
+  ![GitHub Repo stars](https://img.shields.io/github/stars/harsh07bharvada/structures-wiz?color=yellow&style=for-the-badge)
+  ![npm](https://img.shields.io/npm/v/structures-wiz?color=lavender&style=for-the-badge)
+  ![GitHub license](https://img.shields.io/npm/l/structures-wiz?style=for-the-badge)
+  ![npm](https://img.shields.io/npm/dy/structures-wiz?style=for-the-badge)
 
 ### [](https://github.com/Naereen/badges#demandez-moi-nimporte-quoi-in-french)
 
