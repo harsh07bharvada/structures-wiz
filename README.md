@@ -30,6 +30,12 @@ Structures-Wiz is a JavaScript based npm package for using awesome data structur
       - [Is Increasing Triplet Subsequence Present](#increasing-triplet)
       - [Number of Balanced Binary Trees possible of Height 'h' ](#num-bbt-h)
       - [Number of Unique Binary Trees with 'n' unique nodes](#num-bt)
+    - [Fenwick Tree (Binary Indexed Tree)](#fen-tree)
+	    - [Instantiation](#ft-instantiation)
+	    - [Methods](#ft-methods)
+        - [getTree](#ft-getTree)
+        - [add](#ft-add)
+        - [getSum](#ft-getSum)
     - [Segment Tree](#seg-tree)
 	    - [Instantiation](#st-instantiation)
 	    - [Methods](#st-methods)
@@ -384,11 +390,74 @@ console.log("Number of Unique Binary Trees:", uniqBT);// 5
 
 ```
 
+### Fenwick Tree (Binary Indexed Tree)<a name="fen-tree"></a>
+A Fenwick tree or binary indexed tree is a data structure that can efficiently update elements and calculate prefix sums in a table of numbers. Similar to Segment Trees they take O(logN) time to update and fetch the sum.
+
+#### Instantiation <a name="ft-instantiation"></a>
+
+```javascript
+
+import { FenwickTree } from  'structures-wiz';
+ 
+const fTree = new FenwickTree(5);
+
+```
+
+#### Methods  <a name="ft-methods"></a>
+
+Following are the methods exposed for usage:
+
+####  getTree() <a name="ft-getTree"></a>
+
+Gets the Fenwick Tree for corresponding input list.
+```javascript
+
+import { FenwickTree } from  'structures-wiz';
+
+const fTree = new FenwickTree(5);
+
+console.log("Tree:",fTree.getTree())
+
+```
+
+####  add(index, value) <a name="ft-add"></a>
+
+Adds value to the index of the original array.
+```javascript
+
+import { FenwickTree } from  'structures-wiz';
+
+let fTree = new FenwickTree(5);
+
+fTree.add(0,1);
+
+console.log("Tree:",fTree.getTree());
+
+```
+
+####  getSum(index) <a name="ft-getSum"></a>
+
+Gets the Sum till the index the created Fenwick Tree.
+```javascript
+
+import { FenwickTree } from  'structures-wiz';
+
+let fTree = new FenwickTree(5);
+
+fTree.add(1,1);
+fTree.add(3,1);
+
+console.log(fTree.getSum(4));
+
+console.log("Sum till 4th index:",fTree.getSum(4));
+
+```
+
 
 ### Segment Tree <a name="seg-tree"></a>
 Segment Trees are one of the best data structures for range query operations especially when update operations are freqeuent. Segment Tree creates a Tree with the original array values at its leaf nodes and its sum, min, max values as each of the pair of leaves as its parent. This makes updation take max of O(log N) time complexity and fetch a range value also O(log N).
 
-#### Instantiation <a name="pq-instantiation"></a>
+#### Instantiation <a name="st-instantiation"></a>
 
 ```javascript
 
